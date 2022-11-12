@@ -787,6 +787,17 @@ static const struct ATCommand_s ATCommand[] =
     .set = at_return_error,
     .run = at_CFG_run,
 	},
+	
+	{
+    .string = AT_I2CFREQ,
+    .size_string = sizeof(AT_I2CFREQ) - 1,
+#ifndef NO_HELP
+    .help_string = "AT"AT_I2CFREQ":GETS clock Frequency\r\n",
+#endif
+    .get = at_i2cfreq_get,
+    .set = at_return_error,
+    .run = at_return_error,
+  },
 };
 
 
