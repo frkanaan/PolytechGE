@@ -1373,8 +1373,3 @@ void new_firmware_update(void)
 	}		
 }
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
-
-void at_clkfreq_get(void)
-{
-	return I2C_TIMING;
-}

@@ -48,7 +48,8 @@
 #define __COMMAND_H__
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -60,25 +61,25 @@ extern "C" {
 /* Character added when a RX error has been detected */
 #define AT_ERROR_RX_CHAR 0x01
 
-/* Exported functions ------------------------------------------------------- */
+    /* Exported functions ------------------------------------------------------- */
 
-/**
- * @brief Initializes command module
- *
- * @param [IN] None
- * @retval None
- */
-void CMD_Init(void);
+    /**
+     * @brief Initializes command module
+     *
+     * @param [IN] None
+     * @retval None
+     */
+    void CMD_Init(void);
 
-/**
- * @brief Process the command
- *
- * @param [IN] None
- * @retval None
- */
-void CMD_Process(void);
+    /**
+     * @brief Process the command
+     *
+     * @param [IN] None
+     * @retval None
+     */
+    void CMD_Process(void);
 
-uint8_t printf_all_config(void);
+    uint8_t printf_all_config(void);
 
 #ifdef __cplusplus
 }
