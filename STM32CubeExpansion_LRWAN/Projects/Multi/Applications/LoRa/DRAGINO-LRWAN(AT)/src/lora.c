@@ -1373,3 +1373,4 @@ void new_firmware_update(void)
 	}		
 }
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+
