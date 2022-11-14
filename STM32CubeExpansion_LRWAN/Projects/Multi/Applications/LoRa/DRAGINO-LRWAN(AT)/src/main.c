@@ -274,19 +274,8 @@ int main( void )
   /* Configure the Lora Stack*/
   LORA_Init( &LoRaMainCallbacks, &LoRaParamInit);
 		
-		/*Configuure HYT939 sensor*/
+		/*Configure HYT939 sensor*/
 		HYT_sInit(&sensor_data);
-		nsensor = 4;
-		/*sensor_data.hyt_sens[0].adrr=0x50;
-		sensor_data.hyt_sens[1].adrr=0x52;
-		sensor_data.hyt_sens[2].adrr=0x54;
-		sensor_data.hyt_sens[3].adrr=0x56;
-		sensor_data.hyt_sens[4].adrr=0x58;
-		sensor_data.hyt_sens[5].adrr=0x5a;
-		sensor_data.hyt_sens[6].adrr=0x5c;
-		sensor_data.hyt_sens[7].adrr=0x5e;
-		sensor_data.hyt_sens[8].adrr=0x60;
-		sensor_data.hyt_sens[9].adrr=0x62;*/
 	
   while( 1 )
   {
@@ -861,32 +850,11 @@ static void Send( void )
 
 		for (int j = 0; j < nsensor; j++)
 		{
-			// AppData.Buff[i++] =(int)((sensor_data.hyt_sens[j].adrr)>>1);
 			AppData.Buff[i++] = (int)(sensor_data.hyt_sens[j].temp * 10) >> 8;
 			AppData.Buff[i++] = (int)(sensor_data.hyt_sens[j].temp * 10);
 			AppData.Buff[i++] = (int)(sensor_data.hyt_sens[j].hum * 10) >> 8;
 			AppData.Buff[i++] = (int)(sensor_data.hyt_sens[j].hum * 10);
 		}
-		// final tram
-		/*
-		AppData.Buff[i++] =(batteryLevel_mV>>8);       //level of battery in mV
-		AppData.Buff[i++] =batteryLevel_mV & 0xFF;
-
-		//d'autre truc jsplus
-		nombre de capteur
-
-		octet pour l'indice de la tram (peut �tre mettre des 0)
-		ou mettre comme le reste pour la compatibilit� du payload
-
-		for(int j=0;j<nsensor;j++)
-		{
-			AppData.Buff[i++] =(int)(sensor_data.hyt_sens[j].adrr);
-			AppData.Buff[i++] =(int)(sensor_data.hyt_sens[j].temp*10)>>8;
-			AppData.Buff[i++] =(int)(sensor_data.hyt_sens[j].temp*10);
-			AppData.Buff[i++] =(int)(sensor_data.hyt_sens[j].hum*10)>>8;
-			AppData.Buff[i++] =(int)(sensor_data.hyt_sens[j].hum*10);
-		}
-		*/
 	}
 	
 	if(exit_temp==1)
