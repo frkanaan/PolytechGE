@@ -110,6 +110,7 @@ extern uint32_t COUNT,COUNT2;
 void BSP_sensor_Read( sensor_t *sensor_data, uint8_t message)
 {	
  	#if defined(LoRa_Sensor_Node)
+	
 	HW_GetBatteryLevel( );	
 	if(message==1)
 	{
@@ -136,11 +137,11 @@ void BSP_sensor_Read( sensor_t *sensor_data, uint8_t message)
 			PPRINTF("PB14_status:%d\r\n",HAL_GPIO_ReadPin(GPIO_EXTI14_PORT,GPIO_EXTI14_PIN));
 		}
 	}
+	
   IWDG_Refresh();		
 	//+3.3V power sensors	
 	if(mode!=3)
 	{
-		PPRINTF("mode 3");
 		sensor_data->temp1=DS18B20_GetTemp_SkipRom(1);
 		if(message==1)
 		{
@@ -633,7 +634,6 @@ void  BSP_sensor_Init( void  )
 	}
 	else if (mode == 40)
 	{
-		PPRINTF ("CHECK1");//WORKS
 		HAL_I2C_MspDeInit(&I2cHandle40);
 		BSP_hyt939_Init();
 	}
@@ -651,8 +651,6 @@ void HYT_sInit(sensor_t *sensor_data)
 
 	for (i = 0; i < 10; i++)
 	{
-		//sensor_data->hyt_sens[i].temp = 1.0;
-		//sensor_data->hyt_sens[i].hum = 1.0;
 		sensor_data->hyt_sens[i].adrr = 0x50 + 2 * i;
 		sensor_data->hyt_sens[i].gain = 1.0;
 		sensor_data->hyt_sens[i].offset = 0.0;
