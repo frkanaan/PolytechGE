@@ -274,8 +274,8 @@ int main( void )
   /* Configure the Lora Stack*/
   LORA_Init( &LoRaMainCallbacks, &LoRaParamInit);
 		
-		/*Configure HYT939 sensor*/
-		HYT_sInit(&sensor_data);
+	/*Configure HYT939 sensor*/
+	HYT_sInit(&sensor_data);
 	
   while( 1 )
   {
@@ -543,15 +543,13 @@ static void LORA_HasJoined( void )
 }
 
 static void Send( void )
-{
-  sensor_t sensor_data; 
+{ 
 	is_there_data=0;		
   if ( LORA_JoinStatus () != LORA_SET)
   {
     /*Not joined, try again later*/
     return;
   }
-	
 	BSP_sensor_Read( &sensor_data,message_flags );
 	message_flags=0;
 	

@@ -2227,7 +2227,7 @@ ATEerror_t at_val_get(const char *param)
 	if(val < 1 || val > 10) return AT_PARAM_ERROR;
   
 	tran_HYT939data(&sensor_data.hyt_sens[val-1]);
-  PRINTF("\n\r%.2f �C\t%.2f%% RH\r\n", sensor_data.hyt_sens[val-1].temp, sensor_data.hyt_sens[val-1].hum);
+  PRINTF("\n\r%.2f C\t%.2f%% RH\r\n", sensor_data.hyt_sens[val-1].temp, sensor_data.hyt_sens[val-1].hum);
 	return AT_OK;
 }
 
@@ -2238,7 +2238,7 @@ ATEerror_t at_allVall_run(const char *param)
   for (i = 0; i < nsensor; i++)
   {
     tran_HYT939data(&sensor_data.hyt_sens[i]);
-    PRINTF("\n\r%.2f �C\t%.2f%%	RH\r\n", sensor_data.hyt_sens[i].temp, sensor_data.hyt_sens[i].hum);
+    PRINTF("\n\r%.2f C\t%.2f%%	RH\r\n", sensor_data.hyt_sens[i].temp, sensor_data.hyt_sens[i].hum);
   }
   return AT_OK;
 }

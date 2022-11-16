@@ -99,9 +99,8 @@ tfsensor_reading_t reading_t;
 #endif
 
 extern I2C_HandleTypeDef I2cHandle40;
-extern float hyt939_tem, hyt939_hum;
 bool hyt939_status = 1;
-uint8_t nsensor;
+uint8_t nsensor = 4;
 
 extern uint8_t mode;
 extern uint8_t inmode,inmode2,inmode3;
@@ -111,7 +110,6 @@ extern uint32_t COUNT,COUNT2;
 void BSP_sensor_Read( sensor_t *sensor_data, uint8_t message)
 {	
  	#if defined(LoRa_Sensor_Node)
-
 	HW_GetBatteryLevel( );	
 	if(message==1)
 	{
@@ -138,11 +136,11 @@ void BSP_sensor_Read( sensor_t *sensor_data, uint8_t message)
 			PPRINTF("PB14_status:%d\r\n",HAL_GPIO_ReadPin(GPIO_EXTI14_PORT,GPIO_EXTI14_PIN));
 		}
 	}
-	
   IWDG_Refresh();		
 	//+3.3V power sensors	
 	if(mode!=3)
 	{
+		PPRINTF("mode 3");
 		sensor_data->temp1=DS18B20_GetTemp_SkipRom(1);
 		if(message==1)
 		{
@@ -228,6 +226,21 @@ void BSP_sensor_Read( sensor_t *sensor_data, uint8_t message)
 				PPRINTF("DS18B20_temp3:null\r\n");
 			}
 		}
+	}
+	else if (mode == 40)
+	{
+		HAL_I2C_MspInit(&I2cHandle40);
+		for (int i = 0; i < nsensor; i++)
+		{
+			tran_HYT939data(&sensor_data->hyt_sens[i]);
+		}
+		if(message==1)
+		{
+			for (int i = 0; i < nsensor; i++)
+			{
+				PPRINTF("HYT939_temp:%.1f,HYT939_hum:%.1f\r\n",sensor_data->hyt_sens[i].temp,sensor_data->hyt_sens[i].temp);
+			}
+		}			
 	}		
 	
   //+5V power sensors	
@@ -618,7 +631,13 @@ void  BSP_sensor_Init( void  )
 			BSP_oil_float_DeInit();
 		}
 	}
-	
+	else if (mode == 40)
+	{
+		PPRINTF ("CHECK1");//WORKS
+		HAL_I2C_MspDeInit(&I2cHandle40);
+		BSP_hyt939_Init();
+	}
+
 	GPIO_EXTI14_IoInit(inmode);
 	GPIO_INPUT_IoInit();
 	
@@ -627,14 +646,16 @@ void  BSP_sensor_Init( void  )
 
 void HYT_sInit(sensor_t *sensor_data)
 {
-        nsensor = 4;
-        uint8_t i;
+ nsensor = 4;
+	uint8_t i;
 
-        for (i = 0; i < 10; i++)
-        {
-                sensor_data->hyt_sens[i].adrr = 0x50 + 2 * i;
-                sensor_data->hyt_sens[i].gain = 1.0;
-                sensor_data->hyt_sens[i].offset = 0.0;
-        }
+	for (i = 0; i < 10; i++)
+	{
+		//sensor_data->hyt_sens[i].temp = 1.0;
+		//sensor_data->hyt_sens[i].hum = 1.0;
+		sensor_data->hyt_sens[i].adrr = 0x50 + 2 * i;
+		sensor_data->hyt_sens[i].gain = 1.0;
+		sensor_data->hyt_sens[i].offset = 0.0;
+	}
 }
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
