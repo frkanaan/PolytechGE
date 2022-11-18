@@ -2224,10 +2224,10 @@ ATEerror_t at_val_get(const char *param)
   {
     return AT_PARAM_ERROR;
   }
-	if(val < 1 || val > 10) return AT_PARAM_ERROR;
+	if(val < 0 || val > 9) return AT_PARAM_ERROR;
   
-	tran_HYT939data(&sensor_data.hyt_sens[val-1]);
-  PRINTF("\n\r%.2f C\t%.2f%% RH\r\n", sensor_data.hyt_sens[val-1].temp, sensor_data.hyt_sens[val-1].hum);
+	tran_HYT939data(&sensor_data.hyt_sens[val]);
+  PRINTF("\n\r%.2f C\t%.2f%% RH\r\n", sensor_data.hyt_sens[val].temp, sensor_data.hyt_sens[val].hum);
 	return AT_OK;
 }
 
