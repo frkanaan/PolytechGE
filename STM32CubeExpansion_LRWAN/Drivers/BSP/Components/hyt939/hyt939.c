@@ -58,12 +58,12 @@ void BSP_hyt939_Init(void)
 	if (HAL_I2C_Init(&I2cHandle40) != HAL_OK)
 	{
 		/* Initialization Error */
-		PPRINTF("Error_Handler40 INIT");
+		PPRINTF("Error: HYT939 I2C bus Init failure\r\n");
 		Error_Handler();
 	}
 	if (HAL_I2C_Init(&I2cHandle40) == HAL_OK)
 	{
-		PPRINTF("\r\nHandler40 INIT success\r\n");
+		PPRINTF("\r\nHYT939 I2C bus Init success\r\n");
 	}
 
 	// HYT_sInit(&sensor_data);
@@ -142,7 +142,7 @@ void tran_HYT939data(hyt_sensor *sens)
 		}
 		else if (sens->hum < 0)
 		{
-			sens->hum = 5.55;
+			sens->hum = 0;
 		}
 
 		if (sens->temp > 125)

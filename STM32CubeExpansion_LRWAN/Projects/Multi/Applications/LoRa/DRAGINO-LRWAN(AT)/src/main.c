@@ -832,7 +832,6 @@ static void Send( void )
 	
 	else if (mode == 40)
 	{
-		// nsensor =4 ;
 		AppData.Buff[i++] = (batteryLevel_mV >> 8); // level of battery in mV
 		AppData.Buff[i++] = batteryLevel_mV & 0xFF;
 
