@@ -124,11 +124,10 @@ void tran_HYT939data(hyt_sensor *sens)
 	{
 		rxdatas[i] = 0x00;
 	}
-	HAL_Delay(500);
-	PRINTF("\r\nAdresse : 0x%x\n\r", sens->adrr >> 1);
+	PRINTF("\r\nAdress : 0x%x\n\r", sens->adrr >> 1);
 	hyt939_status = 1;
 	HYT939_MR(sens->adrr);
-	HAL_Delay(500);
+	HAL_Delay(1);
 
 	if (hyt939_status == 1)
 	{
