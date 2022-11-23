@@ -147,7 +147,6 @@ typedef enum eATEerror
 #define AT_SENCNT "+SENCNT"
 #define AT_RSTCORR "+RSTCORR"
 #define AT_CORRALL "+CORRALL"
-#define AT_GAIN0 "+GAIN0"
 #define AT_GAIN1 "+GAIN1"
 #define AT_GAIN2 "+GAIN2"
 #define AT_GAIN3 "+GAIN3"
@@ -157,7 +156,7 @@ typedef enum eATEerror
 #define AT_GAIN7 "+GAIN7"
 #define AT_GAIN8 "+GAIN8"
 #define AT_GAIN9 "+GAIN9"
-#define AT_OFFSET0 "+OFFSET0"
+#define AT_GAIN10 "+GAIN10"
 #define AT_OFFSET1 "+OFFSET1"
 #define AT_OFFSET2 "+OFFSET2"
 #define AT_OFFSET3 "+OFFSET3"
@@ -167,6 +166,7 @@ typedef enum eATEerror
 #define AT_OFFSET7 "+OFFSET7"
 #define AT_OFFSET8 "+OFFSET8"
 #define AT_OFFSET9 "+OFFSET9"
+#define AT_OFFSET10 "+OFFSET10"
 #define AT_SCANADRS "+SCANADRS"
 
 /* Exported functions ------------------------------------------------------- */
@@ -707,25 +707,11 @@ ATEerror_t at_allVall_run(const char *param);
 ATEerror_t at_rstCorr_run(const char *param);
 
 /**
- * @brief  Print humidity offset correction of sensor at address 0x31
- * @param  Param string of the AT command - unused
- * @retval AT_OK if OK, or an appropriate AT_xxx error code
- */
-ATEerror_t at_offset0_get(const char *param);
-
-/**
  * @brief  Print the correction values of all sensor
  * @param  Param string of the AT command - unused
  * @retval AT_OK if OK, or an appropriate AT_xxx error code
  */
 ATEerror_t at_corrAll_run(const char *param);
-
-/**
- * @brief  Set linear offset correction of sensor at address 0x31
- * @param  Param string of the AT command
- * @retval AT_OK if OK, or an appropriate AT_xxx error code
- */
-ATEerror_t at_offset0_set(const char *param);
 
 /**
  * @brief  Print humidity offset correction of sensor at address 0x28
@@ -854,18 +840,18 @@ ATEerror_t at_offset9_get(const char *param);
 ATEerror_t at_offset9_set(const char *param);
 
 /**
-	* @brief  Print humidity gain correction of sensor at address 0x31
-	* @param  Param string of the AT command
-	* @retval AT_OK if OK, or an appropriate AT_xxx error code
-	*/
-ATEerror_t at_gain0_get(const char *param);
+ * @brief  Print humidity offset correction of sensor at address 0x31
+ * @param  Param string of the AT command - unused
+ * @retval AT_OK if OK, or an appropriate AT_xxx error code
+ */
+ATEerror_t at_offset10_get(const char *param);
 
 /**
-	* @brief  Set linear gain correction of sensor at address 0x31
-	* @param  Param string of the AT command
-	* @retval AT_OK if OK, or an appropriate AT_xxx error code
-	*/
-ATEerror_t at_gain0_set(const char *param);
+ * @brief  Set linear offset correction of sensor at address 0x31
+ * @param  Param string of the AT command
+ * @retval AT_OK if OK, or an appropriate AT_xxx error code
+ */
+ATEerror_t at_offset10_set(const char *param);
 
 /**
 	* @brief  Print humidity gain correction of sensor at address 0x28
@@ -992,6 +978,20 @@ ATEerror_t at_gain9_get(const char *param);
 	* @retval AT_OK if OK, or an appropriate AT_xxx error code
 	*/
 ATEerror_t at_gain9_set(const char *param);
+
+/**
+	* @brief  Print humidity gain correction of sensor at address 0x31
+	* @param  Param string of the AT command
+	* @retval AT_OK if OK, or an appropriate AT_xxx error code
+	*/
+ATEerror_t at_gain10_get(const char *param);
+
+/**
+	* @brief  Set linear gain correction of sensor at address 0x31
+	* @param  Param string of the AT command
+	* @retval AT_OK if OK, or an appropriate AT_xxx error code
+	*/
+ATEerror_t at_gain10_set(const char *param);
 
 /**
 	* @brief  Return the address values available sensors addresses

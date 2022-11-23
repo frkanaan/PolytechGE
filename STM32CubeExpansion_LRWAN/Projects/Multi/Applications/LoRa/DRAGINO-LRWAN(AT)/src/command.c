@@ -787,23 +787,12 @@ static const struct ATCommand_s ATCommand[] =
     .set = at_return_error,
     .run = at_CFG_run,
 	},
-	
-	{
-				.string = AT_OFFSET0,
-				.size_string = sizeof(AT_OFFSET0) - 1,
-	#ifndef NO_HELP
-				.help_string = "AT" AT_OFFSET0 ": Gets or sets humidity offset of sensor 0 (address 0x28)\r\n",
-	#endif
-				.get = at_offset0_get,
-				.set = at_offset0_set,
-				.run = at_return_error,
-	},
 
 	{
 				.string = AT_OFFSET1,
 				.size_string = sizeof(AT_OFFSET1) - 1,
 	#ifndef NO_HELP
-				.help_string = "AT" AT_OFFSET1 ": Gets or sets humidity offset of sensor 1 (address 0x29)\r\n",
+				.help_string = "AT" AT_OFFSET1 ": Gets or sets humidity offset of sensor 1 (address 0x28)\r\n",
 	#endif
 				.get = at_offset1_get,
 				.set = at_offset1_set,
@@ -814,7 +803,7 @@ static const struct ATCommand_s ATCommand[] =
 				.string = AT_OFFSET2,
 				.size_string = sizeof(AT_OFFSET2) - 1,
 	#ifndef NO_HELP
-				.help_string = "AT" AT_OFFSET2 ": Gets or sets humidity offset of sensor 2 (address 0x2A)\r\n",
+				.help_string = "AT" AT_OFFSET2 ": Gets or sets humidity offset of sensor 2 (address 0x29)\r\n",
 	#endif
 				.get = at_offset2_get,
 				.set = at_offset2_set,
@@ -825,7 +814,7 @@ static const struct ATCommand_s ATCommand[] =
 				.string = AT_OFFSET3,
 				.size_string = sizeof(AT_OFFSET3) - 1,
 #ifndef NO_HELP
-				.help_string = "AT" AT_OFFSET3 ": Gets or sets humidity offset of sensor 3 (address 0x2B)\r\n",
+				.help_string = "AT" AT_OFFSET3 ": Gets or sets humidity offset of sensor 3 (address 0x2A)\r\n",
 #endif
 				.get = at_offset3_get,
 				.set = at_offset3_set,
@@ -836,7 +825,7 @@ static const struct ATCommand_s ATCommand[] =
 				.string = AT_OFFSET4,
 				.size_string = sizeof(AT_OFFSET4) - 1,
 #ifndef NO_HELP
-				.help_string = "AT" AT_OFFSET4 ": Gets or sets humidity offset of sensor 4 (address 0x2C)\r\n",
+				.help_string = "AT" AT_OFFSET4 ": Gets or sets humidity offset of sensor 4 (address 0x2B)\r\n",
 #endif
 				.get = at_offset4_get,
 				.set = at_offset4_set,
@@ -847,7 +836,7 @@ static const struct ATCommand_s ATCommand[] =
 				.string = AT_OFFSET5,
 				.size_string = sizeof(AT_OFFSET5) - 1,
 #ifndef NO_HELP
-				.help_string = "AT" AT_OFFSET5 ": Gets or sets humidity offset of sensor 5 (address 0x2D)\r\n",
+				.help_string = "AT" AT_OFFSET5 ": Gets or sets humidity offset of sensor 5 (address 0x2C)\r\n",
 #endif
 				.get = at_offset5_get,
 				.set = at_offset5_set,
@@ -858,7 +847,7 @@ static const struct ATCommand_s ATCommand[] =
 				.string = AT_OFFSET6,
 				.size_string = sizeof(AT_OFFSET6) - 1,
 #ifndef NO_HELP
-				.help_string = "AT" AT_OFFSET6 ": Gets or sets humidity offset of sensor 6 (address 0x2E)\r\n",
+				.help_string = "AT" AT_OFFSET6 ": Gets or sets humidity offset of sensor 6 (address 0x2D)\r\n",
 #endif
 				.get = at_offset6_get,
 				.set = at_offset6_set,
@@ -869,7 +858,7 @@ static const struct ATCommand_s ATCommand[] =
 				.string = AT_OFFSET7,
 				.size_string = sizeof(AT_OFFSET7) - 1,
 #ifndef NO_HELP
-				.help_string = "AT" AT_OFFSET7 ": Gets or sets humidity offset of sensor 7 (address 0x2F)\r\n",
+				.help_string = "AT" AT_OFFSET7 ": Gets or sets humidity offset of sensor 7 (address 0x2E)\r\n",
 #endif
 				.get = at_offset7_get,
 				.set = at_offset7_set,
@@ -880,7 +869,7 @@ static const struct ATCommand_s ATCommand[] =
 				.string = AT_OFFSET8,
 				.size_string = sizeof(AT_OFFSET8) - 1,
 	#ifndef NO_HELP
-				.help_string = "AT" AT_OFFSET8 ": Gets or sets humidity offset of sensor 8 (address 0x30)\r\n",
+				.help_string = "AT" AT_OFFSET8 ": Gets or sets humidity offset of sensor 8 (address 0x2F)\r\n",
 	#endif
 				.get = at_offset8_get,
 				.set = at_offset8_set,
@@ -891,7 +880,7 @@ static const struct ATCommand_s ATCommand[] =
 				.string = AT_OFFSET9,
 				.size_string = sizeof(AT_OFFSET9) - 1,
 #ifndef NO_HELP
-				.help_string = "AT" AT_OFFSET9 ": Gets or sets humidity offset of sensor 9 (address 0x31)\r\n",
+				.help_string = "AT" AT_OFFSET9 ": Gets or sets humidity offset of sensor 9 (address 0x30)\r\n",
 #endif
 				.get = at_offset9_get,
 				.set = at_offset9_set,
@@ -899,21 +888,21 @@ static const struct ATCommand_s ATCommand[] =
 	},
 
 	{
-				.string = AT_GAIN0,
-				.size_string = sizeof(AT_GAIN0) - 1,
-#ifndef NO_HELP
-				.help_string = "AT" AT_GAIN0 ": Gets or sets humidity gain of sensor 0 (address 0x28)\r\n",
-#endif
-				.get = at_gain0_get,
-				.set = at_gain0_set,
+				.string = AT_OFFSET10,
+				.size_string = sizeof(AT_OFFSET10) - 1,
+	#ifndef NO_HELP
+				.help_string = "AT" AT_OFFSET10 ": Gets or sets humidity offset of sensor 10 (address 0x31)\r\n",
+	#endif
+				.get = at_offset10_get,
+				.set = at_offset10_set,
 				.run = at_return_error,
 	},
-
+	
 	{
 				.string = AT_GAIN1,
 				.size_string = sizeof(AT_GAIN1) - 1,
 #ifndef NO_HELP
-				.help_string = "AT" AT_GAIN1 ": Gets or sets humidity gain of sensor 1 (address 0x29)\r\n",
+				.help_string = "AT" AT_GAIN1 ": Gets or sets humidity gain of sensor 1 (address 0x28)\r\n",
 #endif
 				.get = at_gain1_get,
 				.set = at_gain1_set,
@@ -924,7 +913,7 @@ static const struct ATCommand_s ATCommand[] =
 				.string = AT_GAIN2,
 				.size_string = sizeof(AT_GAIN2) - 1,
 #ifndef NO_HELP
-				.help_string = "AT" AT_GAIN2 ": Gets or sets humidity gain of sensor 2 (address 0x2A)\r\n",
+				.help_string = "AT" AT_GAIN2 ": Gets or sets humidity gain of sensor 2 (address 0x29)\r\n",
 #endif
 				.get = at_gain2_get,
 				.set = at_gain2_set,
@@ -935,7 +924,7 @@ static const struct ATCommand_s ATCommand[] =
 				.string = AT_GAIN3,
 				.size_string = sizeof(AT_GAIN3) - 1,
 #ifndef NO_HELP
-				.help_string = "AT" AT_GAIN3 ": Gets or sets humidity gain of sensor 3 (address 0x2B)\r\n",
+				.help_string = "AT" AT_GAIN3 ": Gets or sets humidity gain of sensor 3 (address 0x2A)\r\n",
 #endif
 				.get = at_gain3_get,
 				.set = at_gain3_set,
@@ -946,7 +935,7 @@ static const struct ATCommand_s ATCommand[] =
 				.string = AT_GAIN4,
 				.size_string = sizeof(AT_GAIN4) - 1,
 #ifndef NO_HELP
-				.help_string = "AT" AT_GAIN4 ": Gets or sets humidity gain of sensor 4 (address 0x2C)\r\n",
+				.help_string = "AT" AT_GAIN4 ": Gets or sets humidity gain of sensor 4 (address 0x2B)\r\n",
 #endif
 				.get = at_gain4_get,
 				.set = at_gain4_set,
@@ -957,7 +946,7 @@ static const struct ATCommand_s ATCommand[] =
 				.string = AT_GAIN5,
 				.size_string = sizeof(AT_GAIN5) - 1,
 #ifndef NO_HELP
-				.help_string = "AT" AT_GAIN5 ": Gets or sets humidity gain of sensor 5 (address 0x2D)\r\n",
+				.help_string = "AT" AT_GAIN5 ": Gets or sets humidity gain of sensor 5 (address 0x2C)\r\n",
 #endif
 				.get = at_gain5_get,
 				.set = at_gain5_set,
@@ -968,7 +957,7 @@ static const struct ATCommand_s ATCommand[] =
 				.string = AT_GAIN6,
 				.size_string = sizeof(AT_GAIN6) - 1,
 #ifndef NO_HELP
-				.help_string = "AT" AT_GAIN6 ": Gets or sets humidity gain of sensor 6 (address 0x2E)\r\n",
+				.help_string = "AT" AT_GAIN6 ": Gets or sets humidity gain of sensor 6 (address 0x2D)\r\n",
 #endif
 				.get = at_gain6_get,
 				.set = at_gain6_set,
@@ -979,7 +968,7 @@ static const struct ATCommand_s ATCommand[] =
 				.string = AT_GAIN7,
 				.size_string = sizeof(AT_GAIN7) - 1,
 #ifndef NO_HELP
-				.help_string = "AT" AT_GAIN7 ": Gets or sets humidity gain of sensor 7 (address 0x2F)\r\n",
+				.help_string = "AT" AT_GAIN7 ": Gets or sets humidity gain of sensor 7 (address 0x2E)\r\n",
 #endif
 				.get = at_gain7_get,
 				.set = at_gain7_set,
@@ -990,7 +979,7 @@ static const struct ATCommand_s ATCommand[] =
 				.string = AT_GAIN8,
 				.size_string = sizeof(AT_GAIN8) - 1,
 #ifndef NO_HELP
-				.help_string = "AT" AT_GAIN8 ": Gets or sets humidity gain of sensor 8 (address 0x30)\r\n",
+				.help_string = "AT" AT_GAIN8 ": Gets or sets humidity gain of sensor 8 (address 0x2F)\r\n",
 #endif
 				.get = at_gain8_get,
 				.set = at_gain8_set,
@@ -1001,13 +990,24 @@ static const struct ATCommand_s ATCommand[] =
 				.string = AT_GAIN9,
 				.size_string = sizeof(AT_GAIN9) - 1,
 #ifndef NO_HELP
-				.help_string = "AT" AT_GAIN9 ": Gets or sets humidity gain of sensor 9 (address 0x31)\r\n",
+				.help_string = "AT" AT_GAIN9 ": Gets or sets humidity gain of sensor 9 (address 0x30)\r\n",
 #endif
 				.get = at_gain9_get,
 				.set = at_gain9_set,
 				.run = at_return_error,
 	},
 
+	{
+				.string = AT_GAIN10,
+				.size_string = sizeof(AT_GAIN10) - 1,
+#ifndef NO_HELP
+				.help_string = "AT" AT_GAIN10 ": Gets or sets humidity gain of sensor 10 (address 0x31)\r\n",
+#endif
+				.get = at_gain10_get,
+				.set = at_gain10_set,
+				.run = at_return_error,
+	},
+	
 	{
 				.string = AT_SENCNT,
 				.size_string = sizeof(AT_SENCNT) - 1,
