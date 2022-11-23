@@ -2236,6 +2236,17 @@ ATEerror_t at_allVall_run(const char *param)
   return AT_OK;
 }
 
+ATEerror_t at_callAllVal_run(const char *param)
+{
+  uint8_t i;
+	
+  for (i = 0; i < nsensor; i++)
+  {
+    PRINTF("\n\r%.2f C\t%.2f%%	RH\r\n", sensor_data.hyt_sens[i].temp, sensor_data.hyt_sens[i].hum);
+  }
+  return AT_OK;
+}
+
 ATEerror_t at_rstCorr_run(const char *param)
 {
 	HYT_sInit(&sensor_data);

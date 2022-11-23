@@ -142,11 +142,12 @@ typedef enum eATEerror
 #define AT_DISFCNTCHECK 		"+DISFCNTCHECK"
 #define AT_DISMACANS 	   	  "+DISMACANS"
 #define AT_RXDATEST  			  "+RXDATEST"
-#define AT_VAL "+VAL"
-#define AT_ALLVAL "+ALLVAL"
-#define AT_SENCNT "+SENCNT"
-#define AT_RSTCORR "+RSTCORR"
-#define AT_CORRALL "+CORRALL"
+#define AT_VAL		"+VAL"
+#define AT_ALLVAL	"+ALLVAL"
+#define AT_PASTVALS					"+AT_PASTVALS"
+#define AT_SENCNT		"+SENCNT"
+#define AT_RSTCORR	"+RSTCORR"
+#define AT_CORRALL	"+CORRALL"
 #define AT_GAIN1 "+GAIN1"
 #define AT_GAIN2 "+GAIN2"
 #define AT_GAIN3 "+GAIN3"
@@ -698,6 +699,13 @@ ATEerror_t at_val_get(const char *param);
  * @retval AT_OK if OK, or an appropriate AT_xxx error code
  */
 ATEerror_t at_allVall_run(const char *param);
+
+/**
+ * @brief  Calls the last sample of perviously measured temperature and humidity of active sensors
+ * @param  Param string of the AT command - unused
+ * @retval AT_OK if OK
+ */
+ATEerror_t at_callAllVal_run(const char *param);
 
 /**
  * @brief  Resets correction values of all sensors
