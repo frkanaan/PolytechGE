@@ -144,7 +144,7 @@ typedef enum eATEerror
 #define AT_RXDATEST  			  "+RXDATEST"
 #define AT_VAL		"+VAL"
 #define AT_ALLVAL	"+ALLVAL"
-#define AT_PASTVALS					"+AT_PASTVALS"
+#define AT_PASTVALS					"+PASTVALS"
 #define AT_SENCNT		"+SENCNT"
 #define AT_RSTCORR	"+RSTCORR"
 #define AT_CORRALL	"+CORRALL"
