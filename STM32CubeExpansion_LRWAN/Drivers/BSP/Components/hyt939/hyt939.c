@@ -65,7 +65,7 @@ void BSP_hyt939_Init(void)
 	{
 		PPRINTF("\r\nHYT939 I2C bus Init success\r\n");
 	}
-
+	
 	/* Enable the Analog I2C Filter */
 	HAL_I2CEx_ConfigAnalogFilter(&I2cHandle40, I2C_ANALOGFILTER_ENABLE);
 	/* Infinite loop */
@@ -119,18 +119,6 @@ void HYT939_DF(uint8_t adrr, uint8_t rxdata[])
 
 void tran_HYT939data(hyt_sensor *sens)
 {
-	GPIO_InitTypeDef  gpioinitstruct = {0};
-	
-				/* Enable the GPIO_A Clock */
-  __HAL_RCC_GPIOA_CLK_ENABLE();
-	
-	/* Configure the GPIOA pin 13 */  
-  gpioinitstruct.Mode   = GPIO_MODE_OUTPUT_PP;
-  gpioinitstruct.Pin    = GPIO_PIN_13;
-	
-  HAL_GPIO_Init(GPIOA, &gpioinitstruct);
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_13, GPIO_PIN_SET);
-	
 	for (int i = 0; i < 4; i++)
 	{
 		rxdatas[i] = 0x00;
@@ -169,9 +157,6 @@ void tran_HYT939data(hyt_sensor *sens)
 		sens->temp = -40; // a modifier pour donner les valeurs qu'on s'est fixé
 		sens->hum = 100;
 	}
-	
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_13, GPIO_PIN_RESET);
-	__HAL_RCC_GPIOA_CLK_DISABLE();
 }
 
 bool sensor_response_state(hyt_sensor *sens)

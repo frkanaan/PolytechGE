@@ -231,10 +231,18 @@ void BSP_sensor_Read( sensor_t *sensor_data, uint8_t message)
 	else if (mode == 40)
 	{
 		HAL_I2C_MspInit(&I2cHandle40);
+		
+		HAL_GPIOA10_Init(); // initializes GPIOA10
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_SET); //PIN 10 set to 3.3V before measurement process
+		HAL_Delay(50);
+		
 		for (int i = 0; i < nsensor; i++)
 		{
 			tran_HYT939data(&sensor_data->hyt_sens[i]);
 		}
+		
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_RESET); //PIN 10 set to 0V after measurement process
+		
 		if(message==1)
 		{
 			for (int i = 0; i < nsensor; i++)
@@ -646,7 +654,7 @@ void  BSP_sensor_Init( void  )
 
 void HYT_sInit(sensor_t *sensor_data)
 {
- nsensor = 4;
+  nsensor = 4;
 	uint8_t i;
 
 	for (i = 0; i < 10; i++)
@@ -655,5 +663,19 @@ void HYT_sInit(sensor_t *sensor_data)
 		sensor_data->hyt_sens[i].gain = 1.0;
 		sensor_data->hyt_sens[i].offset = 0.0;
 	}
+}
+
+void HAL_GPIOA10_Init(void)
+{
+	GPIO_InitTypeDef  GPIOA10struct;
+
+	/* Enable the GPIO_A Clock */
+	__HAL_RCC_GPIOA_CLK_ENABLE();
+
+	/* Configure the GPIOA pin 10 */  
+	GPIOA10struct.Mode   = GPIO_MODE_OUTPUT_PP;
+	GPIOA10struct.Pin    = GPIO_PIN_10;
+
+	HAL_GPIO_Init(GPIOA, &GPIOA10struct);
 }
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
