@@ -140,6 +140,10 @@ void HYT_sInit(sensor_t *sensor_data);
 
 void HAL_GPIOA10_Init(void);
 
+void HAL_GPIOA10_SET(void);
+
+void HAL_GPIOA10_RESET(void);
+
 #ifdef __cplusplus
 }
 #endif

@@ -123,7 +123,7 @@ void tran_HYT939data(hyt_sensor *sens)
 	{
 		rxdatas[i] = 0x00;
 	}
-	PRINTF("Address : 0x%x\n\r", sens->adrr >> 1);
+	//PRINTF("Address : 0x%x\n\r", sens->adrr >> 1);
 	hyt939_status = 1;
 	HYT939_MR(sens->adrr);
 	HAL_Delay(50);
@@ -143,14 +143,14 @@ void tran_HYT939data(hyt_sensor *sens)
 			sens->hum = 0;
 		}
 
-		if (sens->temp > 125)
-		{
-			sens->temp = 125;
-		}
-		else if (sens->temp < -40)
-		{
-			sens->temp = -40;
-		}
+//		if (sens->temp > 125)
+//		{
+//			sens->temp = 125;
+//		}
+//		else if (sens->temp < -40)
+//		{
+//			sens->temp = -40;
+//		}
 	}
 	else
 	{

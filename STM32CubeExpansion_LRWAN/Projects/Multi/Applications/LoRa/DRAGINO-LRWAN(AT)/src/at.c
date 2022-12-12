@@ -2219,8 +2219,12 @@ ATEerror_t at_val_get(const char *param)
   }
 	if(val < 1 || val > 10) return AT_PARAM_ERROR;
   
+	HAL_GPIOA10_SET();
 	tran_HYT939data(&sensor_data.hyt_sens[val-1]);
-  PRINTF("\n\r%.2f C\t%.2f%% RH\r\n", sensor_data.hyt_sens[val-1].temp, sensor_data.hyt_sens[val-1].hum);
+  HAL_GPIOA10_RESET();
+	
+	PRINTF("\n\r%.2f C\t%.2f%% RH\r\n", sensor_data.hyt_sens[val-1].temp, sensor_data.hyt_sens[val-1].hum);
+	
 	return AT_OK;
 }
 
@@ -2229,9 +2233,11 @@ ATEerror_t at_allVall_run(const char *param)
   uint8_t i;
 	
   for (i = 0; i < nsensor; i++)
-  {
+  {	HAL_GPIOA10_SET();
     tran_HYT939data(&sensor_data.hyt_sens[i]);
-    PRINTF("\n\r%.2f C\t%.2f%%	RH\r\n", sensor_data.hyt_sens[i].temp, sensor_data.hyt_sens[i].hum);
+    HAL_GPIOA10_RESET();
+		
+		PRINTF("\n\r%.2f C\t%.2f%%	RH\r\n", sensor_data.hyt_sens[i].temp, sensor_data.hyt_sens[i].hum);
   }
   return AT_OK;
 }
@@ -2267,7 +2273,7 @@ ATEerror_t at_sencnt_set(const char *param)
   {
     return AT_PARAM_ERROR;
   }
-	if ( (val > 10 ) || (val < 1) )
+	if ( (val < 1 ) || (val > 10) )
   {
     PRINTF("Sensor count must be between 1 and 10\n\r");
     return AT_PARAM_ERROR;
