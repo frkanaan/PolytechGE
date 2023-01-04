@@ -71,6 +71,37 @@ void BSP_hyt939_Init(void)
 	/* Infinite loop */
 }
 
+
+void GPIO_HYT_OUTPUT_Init(void)
+{
+	GPIO_InitTypeDef GPIO_InitStruct={0};
+	
+	GPIO_InitStruct.Pin = GPIO_PIN_10;
+  GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull  = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
+
+  HW_GPIO_Init( GPIOA, GPIO_PIN_10, &GPIO_InitStruct );
+}
+
+
+void GPIO_HYT_OUTPUT_DeInit(void)
+{
+	GPIO_InitTypeDef GPIO_InitStruct={0};
+
+  GPIO_InitStruct.Pin = GPIO_PIN_10 ;
+	GPIO_InitStruct.Mode  = GPIO_MODE_ANALOG;
+	GPIO_InitStruct.Pull  = GPIO_NOPULL;
+	
+  HW_GPIO_Init( GPIOA, GPIO_PIN_10, &GPIO_InitStruct );	
+}
+
+
+
+
+
+
+
 void HYT939_MR(uint8_t adrr)
 {
 	uint8_t txdata[1] = {0x80};
@@ -157,6 +188,7 @@ void tran_HYT939data(hyt_sensor *sens)
 		sens->temp = -40; // a modifier pour donner les valeurs qu'on s'est fixé
 		sens->hum = 100;
 	}
+				PRINTF("\r\nHYT939_temp:%.2f,HYT939_hum:%.2f\r\n", sens->temp,sens->hum); //zhyt_sens[i].temp, sensor_data->hyt_sens[i].temp);
 }
 
 bool sensor_response_state(hyt_sensor *sens)

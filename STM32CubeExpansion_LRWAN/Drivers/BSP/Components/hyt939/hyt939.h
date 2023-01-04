@@ -46,6 +46,8 @@ extern "C"
   void HYT939_DF(uint8_t adrr, uint8_t rxdata[]);
   void tran_HYT939data(hyt_sensor *sens);
   bool sensor_response_state(hyt_sensor *sens);
+	void GPIO_HYT_OUTPUT_DeInit(void);
+	void GPIO_HYT_OUTPUT_Init(void);
 #ifdef __cplusplus
 }
 #endif

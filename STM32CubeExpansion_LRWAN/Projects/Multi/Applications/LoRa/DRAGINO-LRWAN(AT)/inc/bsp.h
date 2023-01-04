@@ -138,8 +138,6 @@ void Device_status( device_t *device_data);
 
 void HYT_sInit(sensor_t *sensor_data);
 
-void HAL_GPIOA10_Init(void);
-
 #ifdef __cplusplus
 }
 #endif

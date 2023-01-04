@@ -1958,254 +1958,254 @@ ATEerror_t at_offset1_get(const char *param)
 ATEerror_t at_offset1_set(const char *param)
 {
 	sensor_data.hyt_sens[0].offset = atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[0].offset);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[0].offset);
   return AT_OK;
 }
 
 ATEerror_t at_offset2_get(const char *param)
 {
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[1].offset);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[1].offset);
   return AT_OK;
 }
 
 ATEerror_t at_offset2_set(const char *param)
 {
   sensor_data.hyt_sens[1].offset = atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[1].offset);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[1].offset);
   return AT_OK;
 }
 
 ATEerror_t at_offset3_get(const char *param)
 {
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[2].offset);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[2].offset);
   return AT_OK;
 }
 
 ATEerror_t at_offset3_set(const char *param)
 {
   sensor_data.hyt_sens[2].offset = atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[2].offset);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[2].offset);
   return AT_OK;
 }
 
 ATEerror_t at_offset4_get(const char *param)
 {
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[3].offset);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[3].offset);
   return AT_OK;
 }
 
 ATEerror_t at_offset4_set(const char *param)
 {
   sensor_data.hyt_sens[3].offset = atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[3].offset);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[3].offset);
   return AT_OK;
 }
 
 ATEerror_t at_offset5_get(const char *param)
 {
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[4].offset);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[4].offset);
   return AT_OK;
 }
 
 ATEerror_t at_offset5_set(const char *param)
 {
   sensor_data.hyt_sens[4].offset = atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[4].offset);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[4].offset);
   return AT_OK;
 }
 
 ATEerror_t at_offset6_get(const char *param)
 {
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[5].offset);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[5].offset);
   return AT_OK;
 }
 
 ATEerror_t at_offset6_set(const char *param)
 {
   sensor_data.hyt_sens[5].offset = atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[5].offset);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[5].offset);
   return AT_OK;
 }
 
 ATEerror_t at_offset7_get(const char *param)
 {
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[6].offset);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[6].offset);
   return AT_OK;
 }
 
 ATEerror_t at_offset7_set(const char *param)
 {
   sensor_data.hyt_sens[6].offset = atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[6].offset);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[6].offset);
   return AT_OK;
 }
 
 ATEerror_t at_offset8_get(const char *param)
 {
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[7].offset);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[7].offset);
   return AT_OK;
 }
 
 ATEerror_t at_offset8_set(const char *param)
 {
   sensor_data.hyt_sens[7].offset = atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[7].offset);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[7].offset);
   return AT_OK;
 }
 
 ATEerror_t at_offset9_get(const char *param)
 {
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[8].offset);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[8].offset);
   return AT_OK;
 }
 
 ATEerror_t at_offset9_set(const char *param)
 {
   sensor_data.hyt_sens[8].offset= atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[8].offset);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[8].offset);
   return AT_OK;
 }
 
 ATEerror_t at_offset10_get(const char *param)
 {
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[9].offset);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[9].offset);
   return AT_OK;
 }
 
 ATEerror_t at_offset10_set(const char *param)
 {
   sensor_data.hyt_sens[9].offset= atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[9].offset);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[9].offset);
   return AT_OK;
 }
 
 ATEerror_t at_gain1_get(const char *param)
 {
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[0].gain);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[0].gain);
   return AT_OK;
 }
 
 ATEerror_t at_gain1_set(const char *param)
 {
   sensor_data.hyt_sens[0].gain = atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[0].gain);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[0].gain);
   return AT_OK;
 }
 
 ATEerror_t at_gain2_get(const char *param)
 {
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[1].gain);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[1].gain);
   return AT_OK;
 }
 
 ATEerror_t at_gain2_set(const char *param)
 {
   sensor_data.hyt_sens[1].gain = atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[1].gain);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[1].gain);
   return AT_OK;
 }
 
 ATEerror_t at_gain3_get(const char *param)
 {
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[2].gain);
+  PRINTF(".3f\r\n", sensor_data.hyt_sens[2].gain);
   return AT_OK;
 }
 
 ATEerror_t at_gain3_set(const char *param)
 {
   sensor_data.hyt_sens[2].gain = atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[2].gain);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[2].gain);
   return AT_OK;
 }
 
 ATEerror_t at_gain4_get(const char *param)
 {
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[3].gain);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[3].gain);
   return AT_OK;
 }
 
 ATEerror_t at_gain4_set(const char *param)
 {
   sensor_data.hyt_sens[3].gain = atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[3].gain);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[3].gain);
   return AT_OK;
 }
 
 ATEerror_t at_gain5_get(const char *param)
 {
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[4].gain);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[4].gain);
   return AT_OK;
 }
 
 ATEerror_t at_gain5_set(const char *param)
 {
   sensor_data.hyt_sens[4].gain = atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[4].gain);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[4].gain);
   return AT_OK;
 }
 
 ATEerror_t at_gain6_get(const char *param)
 {
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[5].gain);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[5].gain);
   return AT_OK;
 }
 
 ATEerror_t at_gain6_set(const char *param)
 {
   sensor_data.hyt_sens[5].gain = atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[5].gain);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[5].gain);
   return AT_OK;
 }
 
 ATEerror_t at_gain7_get(const char *param)
 {
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[6].gain);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[6].gain);
   return AT_OK;
 }
 
 ATEerror_t at_gain7_set(const char *param)
 {
   sensor_data.hyt_sens[6].gain = atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[6].gain);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[6].gain);
   return AT_OK;
 }
 
 ATEerror_t at_gain8_get(const char *param)
 {
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[7].gain);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[7].gain);
   return AT_OK;
 }
 
 ATEerror_t at_gain8_set(const char *param)
 {
   sensor_data.hyt_sens[7].gain = atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[7].gain);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[7].gain);
   return AT_OK;
 }
 
 ATEerror_t at_gain9_get(const char *param)
 {
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[8].gain);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[8].gain);
   return AT_OK;
 }
 
 ATEerror_t at_gain9_set(const char *param)
 {
   sensor_data.hyt_sens[8].gain = atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[8].gain);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[8].gain);
   return AT_OK;
 }
 
 ATEerror_t at_gain10_get(const char *param)
 {
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[9].gain);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[9].gain);
   return AT_OK;
 }
 
 ATEerror_t at_gain10_set(const char *param)
 {
   sensor_data.hyt_sens[9].gain = atof(param);
-  PRINTF("\n\r%.3f\r\n", sensor_data.hyt_sens[9].gain);
+  PRINTF("%.3f\r\n", sensor_data.hyt_sens[9].gain);
   return AT_OK;
 }
 
@@ -2220,7 +2220,7 @@ ATEerror_t at_val_get(const char *param)
 	if(val < 1 || val > 10) return AT_PARAM_ERROR;
   
 	tran_HYT939data(&sensor_data.hyt_sens[val-1]);
-  PRINTF("\n\r%.2f C\t%.2f%% RH\r\n", sensor_data.hyt_sens[val-1].temp, sensor_data.hyt_sens[val-1].hum);
+  PRINTF("%.2f C\t%.2f%% RH\r\n", sensor_data.hyt_sens[val-1].temp, sensor_data.hyt_sens[val-1].hum);
 	return AT_OK;
 }
 
@@ -2231,7 +2231,7 @@ ATEerror_t at_allVall_run(const char *param)
   for (i = 0; i < nsensor; i++)
   {
     tran_HYT939data(&sensor_data.hyt_sens[i]);
-    PRINTF("\n\r%.2f C\t%.2f%%	RH\r\n", sensor_data.hyt_sens[i].temp, sensor_data.hyt_sens[i].hum);
+    PRINTF("%.2f C\t%.2f%%	RH\r\n", sensor_data.hyt_sens[i].temp, sensor_data.hyt_sens[i].hum);
   }
   return AT_OK;
 }
@@ -2242,7 +2242,7 @@ ATEerror_t at_callAllVal_run(const char *param)
 	
   for (i = 0; i < nsensor; i++)
   {
-    PRINTF("\n\r%.2f C\t%.2f%%	RH\r\n", sensor_data.hyt_sens[i].temp, sensor_data.hyt_sens[i].hum);
+    PRINTF("%.2f C\t%.2f%%	RH\r\n", sensor_data.hyt_sens[i].temp, sensor_data.hyt_sens[i].hum);
   }
   return AT_OK;
 }
@@ -2255,7 +2255,7 @@ ATEerror_t at_rstCorr_run(const char *param)
 
 ATEerror_t at_sencnt_get(const char *param)
 {
-  PRINTF("\n\r%d\r\n", nsensor);
+  PRINTF("%d\r\n", nsensor);
   return AT_OK;
 }
 
@@ -2269,12 +2269,11 @@ ATEerror_t at_sencnt_set(const char *param)
   }
 	if ( (val > 10 ) || (val < 1) )
   {
-    PRINTF("Sensor count must be between 1 and 10\n\r");
+    PRINTF("Sensor count must be between 1 and 10\r\n");
     return AT_PARAM_ERROR;
   }
 	
   nsensor = val;
-  PRINTF("\n\r%d\r\n", nsensor);
   return AT_OK;
 } 
 
@@ -2283,7 +2282,7 @@ ATEerror_t at_scan_adrs_run(const char *param)
   uint8_t i;
   for (i = 0; i < nsensor; i++)
   {
-    PRINTF("\n\rSensor number %d at address 0x", i+1);
+    PRINTF("Sensor number %d at address 0x\n", i+1);
     if (sensor_response_state(&sensor_data.hyt_sens[i]) != 1) // Sensor response state check
     {
       PRINTF("%x failure\r\n", sensor_data.hyt_sens[i].adrr >> 1);

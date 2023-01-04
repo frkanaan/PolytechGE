@@ -232,7 +232,9 @@ void BSP_sensor_Read( sensor_t *sensor_data, uint8_t message)
 	{
 		HAL_I2C_MspInit(&I2cHandle40);
 		
-		HAL_GPIOA10_Init(); // initializes GPIOA10
+		GPIO_HYT_OUTPUT_Init();
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_RESET); //PIN 10 set to 0V before measurement process to reset the probe
+		HAL_Delay(50);
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_SET); //PIN 10 set to 3.3V before measurement process
 		HAL_Delay(50);
 		
@@ -242,12 +244,12 @@ void BSP_sensor_Read( sensor_t *sensor_data, uint8_t message)
 		}
 		
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_RESET); //PIN 10 set to 0V after measurement process
-		
+		GPIO_HYT_OUTPUT_DeInit();
 		if(message==1)
 		{
 			for (int i = 0; i < nsensor; i++)
 			{
-				PPRINTF("HYT939_temp:%.1f,HYT939_hum:%.1f\r\n",sensor_data->hyt_sens[i].temp,sensor_data->hyt_sens[i].temp);
+				PPRINTF("HYT939_temp_%d: %.1f,	HYT939_hum_%d: %.1f\r\n", i ,sensor_data->hyt_sens[i].temp, i, sensor_data->hyt_sens[i].temp);
 			}
 		}			
 	}		
@@ -642,8 +644,10 @@ void  BSP_sensor_Init( void  )
 	}
 	else if (mode == 40)
 	{
+		GPIO_HYT_OUTPUT_Init();
 		HAL_I2C_MspDeInit(&I2cHandle40);
 		BSP_hyt939_Init();
+		GPIO_HYT_OUTPUT_DeInit();
 	}
 
 	GPIO_EXTI14_IoInit(inmode);
@@ -663,19 +667,8 @@ void HYT_sInit(sensor_t *sensor_data)
 		sensor_data->hyt_sens[i].gain = 1.0;
 		sensor_data->hyt_sens[i].offset = 0.0;
 	}
+	
+	
 }
 
-void HAL_GPIOA10_Init(void)
-{
-	GPIO_InitTypeDef  GPIOA10struct;
-
-	/* Enable the GPIO_A Clock */
-	__HAL_RCC_GPIOA_CLK_ENABLE();
-
-	/* Configure the GPIOA pin 10 */  
-	GPIOA10struct.Mode   = GPIO_MODE_OUTPUT_PP;
-	GPIOA10struct.Pin    = GPIO_PIN_10;
-
-	HAL_GPIO_Init(GPIOA, &GPIOA10struct);
-}
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
