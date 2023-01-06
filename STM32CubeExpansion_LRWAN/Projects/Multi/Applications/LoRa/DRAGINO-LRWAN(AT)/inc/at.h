@@ -168,7 +168,7 @@ typedef enum eATEerror
 #define AT_OFFSET9	"+OFFSET9"
 #define AT_OFFSET10	"+OFFSET10"
 #define AT_SCANADRS "+SCANADRS"
-#define AT_PASTVALS	"+PASTVALS"
+#define AT_PVALS		"+PVALS"
 
 /* Exported functions ------------------------------------------------------- */
 void weightreset(void);
@@ -705,7 +705,7 @@ ATEerror_t at_allVall_run(const char *param);
  * @param  Param string of the AT command - unused
  * @retval AT_OK if OK
  */
-ATEerror_t at_callAllVal_run(const char *param);
+ATEerror_t at_pVals_run(const char *param);
 
 /**
  * @brief  Resets correction values of all sensors

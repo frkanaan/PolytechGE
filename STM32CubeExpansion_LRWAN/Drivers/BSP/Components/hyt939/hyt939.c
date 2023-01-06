@@ -154,7 +154,7 @@ void tran_HYT939data(hyt_sensor *sens)
 	{
 		rxdatas[i] = 0x00;
 	}
-	PRINTF("Address : 0x%x\n\r", sens->adrr >> 1);
+	PRINTF("Address : 0x%x\r\n", sens->adrr >> 1);
 	hyt939_status = 1;
 	HYT939_MR(sens->adrr);
 	HAL_Delay(50);

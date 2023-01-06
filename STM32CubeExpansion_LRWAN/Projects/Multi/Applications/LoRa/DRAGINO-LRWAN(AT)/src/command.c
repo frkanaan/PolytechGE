@@ -1053,14 +1053,14 @@ static const struct ATCommand_s ATCommand[] =
 	},
 	
 	{
-				.string = AT_PASTVALS,
-				.size_string = sizeof(AT_PASTVALS) - 1,
+				.string = AT_PVALS,
+				.size_string = sizeof(AT_PVALS) - 1,
 #ifndef NO_HELP
-				.help_string = "AT" AT_PASTVALS ": Gets last temperature and humidity reading of all active sensors\r\n",
+				.help_string = "AT" AT_PVALS ": Gets last temperature and humidity reading of all active sensors\r\n",
 #endif
 				.get = at_return_error,
 				.set = at_return_error,
-				.run = at_callAllVal_run,
+				.run = at_pVals_run,
 	},
 
 	{
