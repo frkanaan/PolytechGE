@@ -1012,7 +1012,7 @@ static const struct ATCommand_s ATCommand[] =
 				.string = AT_SENCNT,
 				.size_string = sizeof(AT_SENCNT) - 1,
 #ifndef NO_HELP
-				.help_string = "AT" AT_SENCNT ": Gets or set the number of sensors\r\n",
+				.help_string = "AT" AT_SENCNT ": Gets or sets the number of active sensors\r\n",
 #endif
 				.get = at_sencnt_get,
 				.set = at_sencnt_set,
@@ -1020,14 +1020,14 @@ static const struct ATCommand_s ATCommand[] =
 	},
 
 	{
-				.string = AT_SCANADRS,
-				.size_string = sizeof(AT_SCANADRS) - 1,
+				.string = AT_SCANADDR,
+				.size_string = sizeof(AT_SCANADDR) - 1,
 #ifndef NO_HELP
-				.help_string = "AT" AT_SCANADRS ":Scans the addresses of connected sensors and returns each's response\r\n",
+				.help_string = "AT" AT_SCANADDR ":Scans the addresses of connected sensors and returns each's response\r\n",
 #endif
 				.get = at_return_error,
 				.set = at_return_error,
-				.run = at_scan_adrs_run,
+				.run = at_scan_addr_run,
 	},
 
 	{

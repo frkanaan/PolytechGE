@@ -185,10 +185,10 @@ void tran_HYT939data(hyt_sensor *sens)
 	}
 	else
 	{
-		sens->temp = -40; // a modifier pour donner les valeurs qu'on s'est fixé
+		sens->temp = -40;
 		sens->hum = 100;
 	}
-				PRINTF("\r\nHYT939_temp:%.2f,HYT939_hum:%.2f\r\n", sens->temp,sens->hum); //zhyt_sens[i].temp, sensor_data->hyt_sens[i].temp);
+				PRINTF("\r\nHYT939_temp:%.2f,HYT939_hum:%.2f\r\n", sens->temp,sens->hum); 
 }
 
 bool sensor_response_state(hyt_sensor *sens)

@@ -167,7 +167,7 @@ typedef enum eATEerror
 #define AT_OFFSET8	"+OFFSET8"
 #define AT_OFFSET9	"+OFFSET9"
 #define AT_OFFSET10	"+OFFSET10"
-#define AT_SCANADRS "+SCANADRS"
+#define AT_SCANADDR "+SCANADDR"
 #define AT_PVALS		"+PVALS"
 
 /* Exported functions ------------------------------------------------------- */
@@ -1006,7 +1006,7 @@ ATEerror_t at_gain10_set(const char *param);
 	* @param  Param string of the AT command - unused
 	* @retval AT_OK if OK, or an appropriate AT_xxx error code
 	*/
-ATEerror_t at_scan_adrs_run(const char *param);
+ATEerror_t at_scan_addr_run(const char *param);
 
 /**
  * @brief  

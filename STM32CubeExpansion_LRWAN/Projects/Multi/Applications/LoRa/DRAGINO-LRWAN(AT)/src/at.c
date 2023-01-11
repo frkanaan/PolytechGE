@@ -2293,7 +2293,7 @@ ATEerror_t at_sencnt_set(const char *param)
   return AT_OK;
 } 
 
-ATEerror_t at_scan_adrs_run(const char *param)
+ATEerror_t at_scan_addr_run(const char *param)
 {
   uint8_t i;
   for (i = 0; i < nsensor; i++)

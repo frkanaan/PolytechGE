@@ -314,7 +314,7 @@ else if(mode=='31')
  data.SHTHUMMAX= input.bytes[10];    
 }
 
-  if((input.bytes.length==12)||(input.bytes.length==16)||(input.bytes.length==20)||(input.bytes.length==24)||(input.bytes.length==28)||(input.bytes.length==32)||(input.bytes.length==36)||(input.bytes.length==40)||(input.bytes.length==44)||(input.bytes.length==48))
+  if((input.bytes.length==11)||(input.bytes.length==12)||(input.bytes.length==16)||(input.bytes.length==20)||(input.bytes.length==24)||(input.bytes.length==28)||(input.bytes.length==32)||(input.bytes.length==36)||(input.bytes.length==40)||(input.bytes.length==44)||(input.bytes.length==48))
 		 return {
       data: data,
     }
@@ -325,3 +325,4 @@ default:
     }
   }
 }
+
